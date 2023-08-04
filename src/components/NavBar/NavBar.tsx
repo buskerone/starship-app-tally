@@ -19,7 +19,7 @@ const NavBar: FC<NavBarProps> = ({ isFavoritesLinkVisible }) => {
         <Image src={HomeLogo} w={105} h={79} alt="StarShip" />
       </Link>
       {isFavoritesLinkVisible && (
-        <Link to="/favorites">
+        <Link aria-label="Go to favorites" to="/favorites">
           <Box bg="black.200" borderRadius={20} py={1.5} px={5}>
             <Text fontSize={24} color="red.100" textAlign="center">
               View Favorites

@@ -34,6 +34,7 @@ const StarShipCard: FC<StarShipCardProps> = ({
         </VStack>
         <Box h={150} minW={100} position="relative">
           <Box
+            aria-label="Click to add as a favorite!"
             as="button"
             display="flex"
             justifyContent="center"

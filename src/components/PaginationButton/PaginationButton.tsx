@@ -14,6 +14,7 @@ const PaginationButton: FC<PaginationButtonProps> = ({
 }) => {
   return (
     <Box
+      aria-label={`${title} button`}
       as="button"
       lineHeight="1.2"
       px="12px"
