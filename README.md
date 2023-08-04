@@ -11,6 +11,12 @@ Note: if the user tries to enter to a unknown page then a NotFound page will be 
 
 Make sure you are using Node v18.16.0 or similar
 
+First, make sure you have the following env var in your .env.local file (root folder):
+
+```bash
+VITE_API_URL="https://swapi.dev/api"
+```
+
 ```bash
 yarn install
 ```
