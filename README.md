@@ -41,6 +41,7 @@ yarn test:ui
 - Vite
 - Vitest
 - Chakra UI
+- Lottie
 - SWR
 - Context
 - Axios
