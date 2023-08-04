@@ -7,6 +7,13 @@ interface PaginationButtonProps {
   disabled: boolean;
 }
 
+/**
+ * Custom button used for navigating through pages
+ *
+ * @component
+ *
+ * @author Carlos Knopel
+ */
 const PaginationButton: FC<PaginationButtonProps> = ({
   title,
   onClick,
@@ -14,6 +21,7 @@ const PaginationButton: FC<PaginationButtonProps> = ({
 }) => {
   return (
     <Box
+      data-testid="pagination-button"
       aria-label={`${title} button`}
       as="button"
       lineHeight="1.2"

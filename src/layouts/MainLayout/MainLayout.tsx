@@ -7,6 +7,13 @@ interface MainLayoutProps {
   children: React.ReactNode;
 }
 
+/**
+ * Mainlayout in order to wrap all the pages
+ *
+ * @component
+ *
+ * @author Carlos Knopel
+ */
 const MainLayout: FC<MainLayoutProps> = ({ children }) => {
   const location = useLocation();
   const isHome = location.pathname === '/';

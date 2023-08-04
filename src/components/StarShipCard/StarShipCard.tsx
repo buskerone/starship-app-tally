@@ -22,6 +22,13 @@ interface StarShipCardProps {
   onNotesChange?: ChangeEventHandler<HTMLTextAreaElement> | undefined;
 }
 
+/**
+ * Starship main card component
+ *
+ * @component
+ *
+ * @author Carlos Knopel
+ */
 const StarShipCard: FC<StarShipCardProps> = ({
   data,
   isFavorite,
@@ -32,17 +39,35 @@ const StarShipCard: FC<StarShipCardProps> = ({
 }) => {
   const { name, manufacturer, hyperdrive_rating, passengers } = data;
   return (
-    <Card maxW={620} minW={355} bg="#232524" p={4} position="relative">
+    <Card
+      maxW={620}
+      minW={355}
+      bg="#232524"
+      p={4}
+      position="relative"
+      data-testid="starship-card"
+    >
       <HStack justifyContent="space-between" alignItems="flex-start">
         <VStack alignItems="flex-start" w="60%">
-          <Text fontWeight="bold" color="white" fontSize={24} noOfLines={1}>
+          <Text
+            data-testid="starship-name"
+            fontWeight="bold"
+            color="white"
+            fontSize={24}
+            noOfLines={1}
+          >
             {name}
           </Text>
-          <Text color="white" fontSize={18} noOfLines={2}>
+          <Text
+            data-testid="starship-manufacturer"
+            color="white"
+            fontSize={18}
+            noOfLines={2}
+          >
             {manufacturer}
           </Text>
           <RatingStars rating={Number(hyperdrive_rating)} />
-          <Text color="white" fontSize={18}>
+          <Text data-testid="starship-passengers" color="white" fontSize={18}>
             Passengers: {passengers}
           </Text>
         </VStack>
@@ -61,6 +86,7 @@ const StarShipCard: FC<StarShipCardProps> = ({
             top="6px"
             right="6px"
             onClick={favoriteButtonOnClick}
+            data-testid="starship-favorite"
           >
             {isFavorite ? (
               <Image src={FullHeartIcon} w="30px" h="30px" alt="favorite" />
@@ -69,6 +95,7 @@ const StarShipCard: FC<StarShipCardProps> = ({
             )}
           </Box>
           <Image
+            data-testid="starship-image"
             src={StarShipImage}
             alt={name}
             objectFit="cover"
@@ -80,6 +107,7 @@ const StarShipCard: FC<StarShipCardProps> = ({
       </HStack>
       {isNotesBoxVisible && (
         <Textarea
+          data-testid="starship-notes"
           mt="30px"
           borderColor="gray.100"
           placeholder="Add text"

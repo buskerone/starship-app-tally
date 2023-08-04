@@ -6,6 +6,13 @@ interface RatingStarsProps {
   rating: number;
 }
 
+/**
+ * Rating stars component for showing the ranking
+ *
+ * @component
+ *
+ * @author Carlos Knopel
+ */
 const RatingStars: FC<RatingStarsProps> = ({ rating }) => {
   const fullStars = Math.floor(rating);
   const halfStars = rating % 1 === 0.5 ? 1 : 0;
@@ -17,7 +24,7 @@ const RatingStars: FC<RatingStarsProps> = ({ rating }) => {
   };
 
   return (
-    <HStack gap="8px">
+    <HStack gap="8px" data-testid="rating-stars">
       {renderStars(FullStarIcon, fullStars)}
       {renderStars(HalfStarIcon, halfStars)}
     </HStack>

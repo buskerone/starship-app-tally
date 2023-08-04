@@ -8,6 +8,13 @@ import { PageTitles } from '@/constants';
 
 import { Starship } from '@/types';
 
+/**
+ * Favorites page with the list of starships marked as favorites
+ *
+ * @component
+ *
+ * @author Carlos Knopel
+ */
 const Favorites: FC = () => {
   const { favorites } = useContext(FavoritesContext);
   const { notes, setNote } = useContext(NotesContext);
@@ -17,7 +24,9 @@ const Favorites: FC = () => {
 
   return (
     <Box h="100%" w="100%">
-      <PageHeader title={PageTitles.FAVORITES} />
+      <Box mt={{ base: '200px', md: '85px' }}>
+        <PageHeader title={PageTitles.FAVORITES} />
+      </Box>
       {favorites.length === 0 ? (
         <EmptyState text="Sorry, you don't have any favorites here" />
       ) : (
@@ -28,7 +37,7 @@ const Favorites: FC = () => {
             lg: 'repeat(2, 1fr)',
           }}
           gap={6}
-          mt={6}
+          mt={{ base: '42px', md: '60px' }}
         >
           {favorites.map((ship: Starship) => (
             <StarShipCard
