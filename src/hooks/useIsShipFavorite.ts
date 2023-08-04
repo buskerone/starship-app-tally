@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { FavoritesContext } from '@/context/Favorites';
+import { FavoritesContext } from '@/context/FavoritesContext';
 import { Starship } from '@/types';
 
 const useIsShipFavorite = () => {

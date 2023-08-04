@@ -9,6 +9,7 @@ const theme = extendTheme({
     },
     gray: {
       100: '#a2a2a2',
+      200: '#D9D9D9',
     },
     red: {
       100: '#ff6871',

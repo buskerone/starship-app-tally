@@ -1,5 +1,13 @@
-import { FC } from 'react';
-import { Card, Image, Text, HStack, VStack, Box } from '@chakra-ui/react';
+import { ChangeEventHandler, FC } from 'react';
+import {
+  Card,
+  Image,
+  Text,
+  HStack,
+  VStack,
+  Box,
+  Textarea,
+} from '@chakra-ui/react';
 import { RatingStars } from '@/components';
 import { EmptyHeartIcon, FullHeartIcon, StarShipImage } from '@/assets';
 
@@ -9,12 +17,18 @@ interface StarShipCardProps {
   data: Starship;
   isFavorite: boolean;
   favoriteButtonOnClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  isNotesBoxVisible?: boolean;
+  notesText?: string;
+  onNotesChange?: ChangeEventHandler<HTMLTextAreaElement> | undefined;
 }
 
 const StarShipCard: FC<StarShipCardProps> = ({
   data,
   isFavorite,
   favoriteButtonOnClick,
+  isNotesBoxVisible = false,
+  notesText,
+  onNotesChange,
 }) => {
   const { name, manufacturer, hyperdrive_rating, passengers } = data;
   return (
@@ -64,6 +78,16 @@ const StarShipCard: FC<StarShipCardProps> = ({
           />
         </Box>
       </HStack>
+      {isNotesBoxVisible && (
+        <Textarea
+          mt="30px"
+          borderColor="gray.100"
+          placeholder="Add text"
+          color="white"
+          value={notesText}
+          onChange={onNotesChange}
+        />
+      )}
     </Card>
   );
 };

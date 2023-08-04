@@ -1,7 +1,8 @@
 import { FC, useContext } from 'react';
 import { Box, Grid } from '@chakra-ui/react';
 import { PageHeader, EmptyState, StarShipCard } from '@/components';
-import { FavoritesContext } from '@/context/Favorites';
+import { FavoritesContext } from '@/context/FavoritesContext';
+import { NotesContext } from '@/context/NotesContext';
 import { useIsShipFavorite, useToggleFavoriteShip } from '@/hooks';
 import { PageTitles } from '@/constants';
 
@@ -9,6 +10,7 @@ import { Starship } from '@/types';
 
 const Favorites: FC = () => {
   const { favorites } = useContext(FavoritesContext);
+  const { notes, setNote } = useContext(NotesContext);
 
   const handleToggleShipFavorite = useToggleFavoriteShip();
   const isShipFavorite = useIsShipFavorite();
@@ -34,6 +36,9 @@ const Favorites: FC = () => {
               data={ship}
               isFavorite={isShipFavorite(ship)}
               favoriteButtonOnClick={() => handleToggleShipFavorite(ship)}
+              isNotesBoxVisible
+              notesText={notes[`${ship.name}-${ship.manufacturer}`] || ''}
+              onNotesChange={(event) => setNote(ship, event.target.value)}
             />
           ))}
         </Grid>
