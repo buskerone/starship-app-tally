@@ -9,6 +9,8 @@ Note: if the user tries to enter to a unknown page then a NotFound page will be 
 
 ## How to run it?
 
+Make sure you are using Node v18.16.0 or similar
+
 ```bash
 yarn install
 ```
