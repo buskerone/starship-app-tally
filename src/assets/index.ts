@@ -1,3 +1,4 @@
+export { default as EmptyAnimation } from './empty-animation.json';
 export { default as HomeLogo } from './home_logo.jpg';
 export { default as StarShipImage } from './starship.jpg';
 export { default as FullHeartIcon } from './full_heart.svg';

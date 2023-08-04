@@ -1,11 +1,14 @@
 import { FC } from 'react';
 import Router from '@/router';
 import { ChakraProvider } from '@chakra-ui/react';
+import FavoritesContextProvider from '@/context/Favorites';
 import theme from '@/theme';
 
 const App: FC = () => (
   <ChakraProvider theme={theme}>
-    <Router />
+    <FavoritesContextProvider>
+      <Router />
+    </FavoritesContextProvider>
   </ChakraProvider>
 );
 

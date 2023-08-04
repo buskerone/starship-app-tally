@@ -1,6 +1,7 @@
 import { FC, useState } from 'react';
 import { Box, Grid, HStack } from '@chakra-ui/react';
 import { PageHeader, PaginationButton, StarShipCard } from '@/components';
+import { useToggleFavoriteShip, useIsShipFavorite } from '@/hooks';
 import axios from 'axios';
 import useSWR from 'swr';
 import { PageTitles } from '@/constants';
@@ -12,6 +13,9 @@ const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 const StarShipList: FC = () => {
   const [pageIndex, setPageIndex] = useState(1);
 
+  const handleToggleShipFavorite = useToggleFavoriteShip();
+  const isShipFavorite = useIsShipFavorite();
+
   const { data, isLoading } = useSWR(
     `${import.meta.env.VITE_API_URL}/starships?page=${pageIndex}`,
     fetcher
@@ -21,7 +25,11 @@ const StarShipList: FC = () => {
     <Box h="100%" w="100%">
       <PageHeader title={PageTitles.HOME} isLoading={isLoading} />
       <Grid
-        templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(2, 1fr)' }}
+        templateColumns={{
+          base: 'repeat(1, 1fr)',
+          md: 'repeat(2, 1fr)',
+          lg: 'repeat(2, 1fr)',
+        }}
         gap={6}
         mt={6}
         minH="500px"
@@ -31,6 +39,8 @@ const StarShipList: FC = () => {
             <StarShipCard
               key={`${ship.name}-${ship.manufacturer}`}
               data={ship}
+              isFavorite={isShipFavorite(ship)}
+              favoriteButtonOnClick={() => handleToggleShipFavorite(ship)}
             />
           ))}
       </Grid>

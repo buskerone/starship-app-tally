@@ -11,7 +11,7 @@ const NavBar: FC<NavBarProps> = ({ isFavoritesLinkVisible }) => {
   return (
     <HStack
       px={{ base: 0, lg: 16 }}
-      maxW={{ base: '625px', lg: '8xl' }}
+      maxW="8xl"
       justifyContent="space-between"
       alignItems="center"
     >
