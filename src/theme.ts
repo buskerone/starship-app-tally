@@ -4,7 +4,11 @@ const theme = extendTheme({
   colors: {
     black: {
       100: '#232524',
-      200: '#000408',
+      200: '#212423',
+      300: '#000408',
+    },
+    gray: {
+      100: '#a2a2a2',
     },
     red: {
       100: '#ff6871',
@@ -13,7 +17,7 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        backgroundColor: 'black.200',
+        backgroundColor: 'black.300',
         color: '#fff',
       },
     },
