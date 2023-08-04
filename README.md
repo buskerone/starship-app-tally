@@ -1,27 +1,87 @@
-# React + TypeScript + Vite
+# Starship - Tally - Take home test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## This is a take home test made with React/Vite that shows two different pages:
 
-Currently, two official plugins are available:
+- Home page: all the starships are being fetched from SWAPI API
+- Favorite page: renders all the favorite starships selected by the user
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Note: if the user tries to enter to a unknown page then a NotFound page will be rendered
 
-## Expanding the ESLint configuration
+## How to run it?
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```bash
+yarn install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+```bash
+yarn dev
+```
+
+## How to run tests?
+
+```bash
+yarn test
+```
+
+```bash
+yarn test:ui
+```
+
+## Technologies used:
+
+- TypeScript
+- Vite
+- Vitest
+- Chakra UI
+- SWR
+- Context
+- Axios
+- Prettier
+- Eslint
+- Lint staged
+- Husky
+
+## Folder structure
+
+- [assets/](./src/assets)
+  - [empty-animation.json](./src/assets/empty-animation.json)
+  - [empty_heart.svg](./src/assets/empty_heart.svg)
+  - [full_heart.svg](./src/assets/full_heart.svg)
+  - [full_star.svg](./src/assets/full_star.svg)
+  - [half_star.svg](./src/assets/half_star.svg)
+  - [home_logo.jpg](./src/assets/home_logo.jpg)
+  - [index.ts](./src/assets/index.ts)
+  - [starship.jpg](./src/assets/starship.jpg)
+- [components/](./src/components)
+  - [EmptyState/](./src/components/EmptyState)
+  - [NavBar/](./src/components/NavBar)
+  - [PageHeader/](./src/components/PageHeader)
+  - [PaginationButton/](./src/components/PaginationButton)
+  - [RatingStars/](./src/components/RatingStars)
+  - [StarShipCard/](./src/components/StarShipCard)
+  - [index.ts](./src/components/index.ts)
+- [context/](./src/context)
+  - [FavoritesContext.tsx](./src/context/FavoritesContext.tsx)
+  - [NotesContext.tsx](./src/context/NotesContext.tsx)
+- [hooks/](./src/hooks)
+  - [index.ts](./src/hooks/index.ts)
+  - [useIsShipFavorite.ts](./src/hooks/useIsShipFavorite.ts)
+  - [useToggleFavoriteShip.ts](./src/hooks/useToggleFavoriteShip.ts)
+- [layouts/](./src/layouts)
+  - [MainLayout/](./src/layouts/MainLayout)
+  - [index.ts](./src/layouts/index.ts)
+- [pages/](./src/pages)
+  - [Favorites/](./src/pages/Favorites)
+  - [NotFound/](./src/pages/NotFound)
+  - [StarShipList/](./src/pages/StarShipList)
+  - [index.ts](./src/pages/index.ts)
+- [router/](./src/router)
+  - [Router.tsx](./src/router/Router.tsx)
+  - [index.ts](./src/router/index.ts)
+- [types/](./src/types)
+  - [index.ts](./src/types/index.ts)
+- [App.tsx](./src/App.tsx)
+- [constants.ts](./src/constants.ts)
+- [main.tsx](./src/main.tsx)
+- [theme.ts](./src/theme.ts)
+- [vite-env.d.ts](./src/vite-env.d.ts)
