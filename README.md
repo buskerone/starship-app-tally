@@ -8,7 +8,7 @@
 Note: if the user tries to enter to a unknown page then a NotFound page will be rendered
 
 ## Vercel deployment
-[Vercel deployment]([https://starship-app-tally.vercel.app/])
+[Vercel deployment](https://starship-app-tally.vercel.app/)
 
 ## How to run it?
 
