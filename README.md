@@ -97,3 +97,7 @@ yarn test:ui
 - [main.tsx](./src/main.tsx)
 - [theme.ts](./src/theme.ts)
 - [vite-env.d.ts](./src/vite-env.d.ts)
+
+## Screenshots
+<img width="1485" alt="screenshot-home" src="https://github.com/buskerone/starship-app-tally/assets/2034112/89268cdf-1d72-41a4-81b2-5bf031f75fdd">
+<img width="1479" alt="screenshot-favorites" src="https://github.com/buskerone/starship-app-tally/assets/2034112/e25040d0-93f7-4761-8781-73cc4e84ed56">
