@@ -16,7 +16,7 @@ interface NavBarProps {
  */
 const NavBar: FC<NavBarProps> = ({ isFavoritesLinkVisible }) => {
   return (
-    <HStack px={{ base: 0, lg: 16 }} maxW="8xl" position="relative">
+    <HStack h={16} px={{ base: 0, lg: 16 }} maxW="8xl" position="relative">
       <Box position="absolute" top="10px" left={{ base: -7, lg: 10 }}>
         <Link to="/">
           <Image src={HomeLogo} w={105} h={79} alt="StarShip" />

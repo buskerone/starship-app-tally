@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useState } from 'react';
+import { ReactNode, createContext, useEffect, useState } from 'react';
 import { Starship } from '@/types';
 
 type NotesContextType = {
@@ -17,8 +17,19 @@ type NotesProviderProps = {
   children: ReactNode;
 };
 
+const getInitialState = () => {
+  const notes = localStorage.getItem('notes');
+  return notes ? JSON.parse(notes) : {};
+};
+
 export default function NotesProvider({ children }: NotesProviderProps) {
-  const [notes, setNotes] = useState<{ [key: string]: string }>({});
+  const [notes, setNotes] = useState<{ [key: string]: string }>(
+    getInitialState
+  );
+
+  useEffect(() => {
+    localStorage.setItem('notes', JSON.stringify(notes));
+  }, [notes]);
 
   const setNote = (ship: Starship, note: string) => {
     setNotes((prevNotes) => ({

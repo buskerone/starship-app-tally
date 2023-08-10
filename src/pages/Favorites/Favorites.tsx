@@ -24,9 +24,7 @@ const Favorites: FC = () => {
 
   return (
     <Box h="100%" w="100%">
-      <Box mt={{ base: '200px', md: '85px' }}>
-        <PageHeader title={PageTitles.FAVORITES} />
-      </Box>
+      <PageHeader title={PageTitles.FAVORITES} />
       {favorites.length === 0 ? (
         <EmptyState text="Sorry, you don't have any favorites here" />
       ) : (
@@ -34,7 +32,6 @@ const Favorites: FC = () => {
           templateColumns={{
             base: 'repeat(1, 1fr)',
             md: 'repeat(2, 1fr)',
-            lg: 'repeat(2, 1fr)',
           }}
           gap={6}
           mt={{ base: '42px', md: '60px' }}

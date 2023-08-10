@@ -21,7 +21,9 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
   return (
     <Container maxW="8xl" minH="100vh">
       <NavBar isFavoritesLinkVisible={isHome} />
-      <Box p={{ base: 0, lg: 16 }}>{children}</Box>
+      <Box py={{ base: 28, lg: 20 }} px={{ base: 0, lg: 16 }}>
+        {children}
+      </Box>
     </Container>
   );
 };
