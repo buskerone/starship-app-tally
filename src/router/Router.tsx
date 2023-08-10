@@ -15,7 +15,7 @@ const Router: FC = () => {
           <Routes>
             <Route path="/" element={<StarShipList />} />
             <Route path="/favorites" element={<Favorites />} />
-            <Route path="/*" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </MainLayout>
       </Suspense>
