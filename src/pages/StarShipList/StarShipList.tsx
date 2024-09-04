@@ -35,16 +35,13 @@ const StarShipList: FC = () => {
 
   return (
     <Box h="100%" w="100%">
-      <Box mt={{ base: '120px', lg: '0px' }}>
-        <PageHeader title={PageTitles.HOME} isLoading={isLoading} />
-      </Box>
+      <PageHeader title={PageTitles.HOME} isLoading={isLoading} />
       {!error ? (
         <>
           <Grid
             templateColumns={{
               base: 'repeat(1, 1fr)',
               md: 'repeat(2, 1fr)',
-              lg: 'repeat(2, 1fr)',
             }}
             gap={6}
             mt={{ base: '42px', lg: '60px' }}

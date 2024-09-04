@@ -42,7 +42,7 @@ const StarShipCard: FC<StarShipCardProps> = ({
     <Card
       maxW={620}
       minW={355}
-      bg="#232524"
+      bg="black.100"
       p={4}
       position="relative"
       data-testid="starship-card"
@@ -88,11 +88,12 @@ const StarShipCard: FC<StarShipCardProps> = ({
             onClick={favoriteButtonOnClick}
             data-testid="starship-favorite"
           >
-            {isFavorite ? (
-              <Image src={FullHeartIcon} w="30px" h="30px" alt="favorite" />
-            ) : (
-              <Image src={EmptyHeartIcon} w="30px" h="30px" alt="favorite" />
-            )}
+            <Image
+              src={isFavorite ? FullHeartIcon : EmptyHeartIcon}
+              w="30px"
+              h="30px"
+              alt="favorite"
+            />
           </Box>
           <Image
             data-testid="starship-image"
